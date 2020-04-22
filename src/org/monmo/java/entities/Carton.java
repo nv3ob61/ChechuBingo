@@ -27,11 +27,23 @@ import java.util.List;
 public class Carton {
 
   public static final int DEF_NUMS = 12;
+  public static final int DEF_ACIERTOS = 0;
+  public static final int DEF_RESTANTES = 100;
 
   private List<Bola> carton = new ArrayList<>(DEF_NUMS);
+  private int aciertos;
+  private int restantes;
+
 
   public Carton() {
     this.carton =new ArrayList<>(DEF_NUMS);
+    this.aciertos = DEF_ACIERTOS;
+    this.restantes = DEF_RESTANTES;
+  }
+
+  public Carton(int aciertos, int restantes) {
+    this.aciertos = aciertos;
+    this.restantes = restantes;
   }
 
   public List<Bola> getCarton() {
@@ -42,13 +54,30 @@ public class Carton {
     this.carton = carton;
   }
 
+  public int getAciertos() {
+    return aciertos;
+  }
+
+  public void setAciertos(int aciertos) {
+    this.aciertos = aciertos;
+  }
+
+  public int getRestantes() {
+    return restantes;
+  }
+
+  public void setRestantes(int restantes) {
+    this.restantes = restantes;
+  }
+
   @Override
   public String toString() {
-    return String.format("%s", stringCarton());
+    return String.format("%s, %d", stringCarton());
   }
 
   public final String muestraCarton(Carton c) {
-    return String.format("%s", c.stringCarton());
+    return String.format("%s%nNÚMS RESTANTES: %d%n", 
+            c.stringCarton(), getRestantes());
   }
 
   public final String stringCarton() {
