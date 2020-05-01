@@ -17,7 +17,6 @@
  */
 package org.monmo.java.comparators;
 
-import java.time.LocalDate;
 import java.util.Comparator;
 import org.monmo.java.entities.Bola;
 import org.monmo.java.enumerations.Criterio;
